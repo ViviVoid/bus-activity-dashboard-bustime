@@ -12,3 +12,6 @@ Instructions for Local Development
 
 ### Frontend
  - Start frontend: npm install && ng serve in bus-dashboard
+
+### AI (LLM) Disclosure
+The use of Copilot was applied in the angular frontend scaffolding of this project.
