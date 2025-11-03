@@ -1,4 +1,3 @@
-# bus-activity-dashboard-bustime
 # Bustime Activity Dashboard
 -------------------------
 Contains:
