@@ -1,59 +1,102 @@
-# BusDashboard
+# Bus Activity Dashboard - Angular Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.5.
+Modern Angular 20 frontend application for displaying real-time bus information and predictions.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- **Bus Routes Display**: View all available bus routes with color-coded cards
+- **Bus Predictions Search**: Search for real-time bus arrival predictions by stop ID
+- **Responsive Design**: Mobile-friendly layout that adapts to different screen sizes
+- **Modern UI**: Clean, gradient-based design with smooth animations
 
-```bash
-ng serve
-```
+## Architecture
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Components
 
-## Code scaffolding
+- **RoutesListComponent**: Displays a grid of all bus routes fetched from the API
+- **PredictionsComponent**: Provides a search interface for bus stop predictions
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Services
 
-```bash
-ng generate component component-name
-```
+- **BustimeService**: Handles HTTP communication with the backend API
+  - `getRoutes()`: Fetches all available bus routes
+  - `getPredictions(stopId)`: Fetches predictions for a specific stop
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+### Models
 
-```bash
-ng generate --help
-```
+TypeScript interfaces for API responses:
+- `Route`: Bus route information
+- `Prediction`: Bus arrival prediction data
+- `RoutesResponse` & `PredictionsResponse`: API response wrappers
 
-## Building
+## Development
 
-To build the project run:
+### Prerequisites
 
-```bash
-ng build
-```
+- Node.js (v18 or later)
+- npm
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+### Setup
 
 ```bash
-ng test
+npm install
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+### Development Server
 
 ```bash
-ng e2e
+npm start
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Additional Resources
+The dev server is configured to proxy API requests to `http://localhost:5000` (see `proxy.conf.json`).
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Build
+
+```bash
+npm run build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+### Running Tests
+
+```bash
+npm test
+```
+
+## API Integration
+
+The frontend connects to the BusTimeDashboard.API backend at:
+
+- `GET /api/bustime/routes` - Fetch all bus routes
+- `GET /api/bustime/predictions/{stopId}` - Fetch predictions for a stop
+
+Make sure the backend API is running before starting the frontend.
+
+## Project Structure
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── routes-list.component.ts    # Bus routes display
+│   │   └── predictions.component.ts    # Predictions search
+│   ├── services/
+│   │   └── bustime.service.ts          # API communication
+│   ├── models/
+│   │   └── bustime.models.ts           # TypeScript interfaces
+│   ├── app.ts                          # Root component
+│   ├── app.html                        # Root template
+│   ├── app.css                         # Root styles
+│   └── app.config.ts                   # App configuration
+└── ...
+```
+
+## Technologies
+
+- **Angular 20**: Latest Angular framework with standalone components
+- **RxJS 7**: Reactive programming for async operations
+- **TypeScript 5.8**: Type-safe development
+- **CSS3**: Modern styling with gradients and animations
