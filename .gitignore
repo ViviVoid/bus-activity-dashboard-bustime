@@ -1,2 +1,6 @@
 
 BusTimeDashboard.API/.env
+
+BusTimeDashboard.API/obj/
+
+BusTimeDashboard.API/bin/
