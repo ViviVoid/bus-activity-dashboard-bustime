@@ -2,13 +2,14 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { RoutesResponse, PredictionsResponse } from '../models/bustime.models';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BustimeService {
   private readonly http = inject(HttpClient);
-  private readonly apiUrl = '/api/bustime';
+  private readonly apiUrl = environment.apiUrl;
 
   getRoutes(): Observable<RoutesResponse> {
     return this.http.get<RoutesResponse>(`${this.apiUrl}/routes`);

@@ -19,7 +19,7 @@ import { Route } from '../models/bustime.models';
       @if (routes().length > 0) {
         <div class="routes-grid">
           @for (route of routes(); track route.rt) {
-            <div class="route-card" [style.border-left-color]="'#' + route.rtclr">
+            <div class="route-card" [style.border-left-color]="sanitizeColor(route.rtclr)">
               <div class="route-number">{{ route.rt }}</div>
               <div class="route-name">{{ route.rtnm }}</div>
               @if (route.rtdd) {
@@ -106,6 +106,14 @@ export class RoutesListComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadRoutes();
+  }
+
+  protected sanitizeColor(color: string): string {
+    // Validate that color is a valid hex color (6 chars, alphanumeric)
+    if (!color || !/^[0-9A-Fa-f]{6}$/.test(color)) {
+      return '#666666'; // Default gray if invalid
+    }
+    return `#${color}`;
   }
 
   private loadRoutes(): void {
