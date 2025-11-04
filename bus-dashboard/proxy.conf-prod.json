@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "https://bustimeactivitydashboard-bee8enbpawg8dhd3.northcentralus-01.azurewebsites.net/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
