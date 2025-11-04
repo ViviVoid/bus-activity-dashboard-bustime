@@ -43,12 +43,12 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CA0613D437104471B4C7501115418AB0 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_299A04F67E8344BFA1FF051F00660B76 }}
 
-      - name: 'Deploy to Azure Function App'
+      - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'busactivityapi-cxedbmgyhdfbbken'
-          # slot-name: 'Production'
+          app-name: 'bustimeactivitydashboard'   # your new Web App name
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
+
 
           
 
