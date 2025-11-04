@@ -36,12 +36,13 @@ jobs:
           dotnet publish --configuration Release --output ./output
           popd
       
-      - name: Login to Azure
-        uses: azure/login@v2
-        with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_022AF30D6BBF438B90232B77E63D0C2F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CA0613D437104471B4C7501115418AB0 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_299A04F67E8344BFA1FF051F00660B76 }}
+      # Not necessary as long as we use publish-profile for deployment
+      # - name: Login to Azure
+      #   uses: azure/login@v2
+      #   with:
+      #     client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_022AF30D6BBF438B90232B77E63D0C2F }}
+      #     tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CA0613D437104471B4C7501115418AB0 }}
+      #     subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_299A04F67E8344BFA1FF051F00660B76 }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
