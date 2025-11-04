@@ -4,3 +4,7 @@ BusTimeDashboard.API/.env
 BusTimeDashboard.API/obj/
 
 BusTimeDashboard.API/bin/
+
+BusTimeDashboard.API/publish/
+
+BusTimeDashboard.API/deploy.zip
