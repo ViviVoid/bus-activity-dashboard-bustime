@@ -26,7 +26,7 @@ export class BustimeService {
     if (isCacheValid) {
       return of(JSON.parse(cachedData));
     } else {
-      if (!this.routesCache$) {
+      if (!this.routesCache$) { // Only create traffic when needed
         this.routesCache$ = this.http.get<RoutesResponse>(`${this.apiUrl}/routes`).pipe(
           tap((response) => {
             localStorage.setItem(this.cacheKey, JSON.stringify(response));
