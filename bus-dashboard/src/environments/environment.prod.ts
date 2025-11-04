@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://calm-glacier-02ac7391e.3.azurestaticapps.net/api/bustime'
+  apiUrl: 'https://bustimeactivitydashboard-bee8enbpawg8dhd3.northcentralus-01.azurewebsites.net/api/bustime'
 };
