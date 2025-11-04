@@ -43,13 +43,13 @@ jobs:
           tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CA0613D437104471B4C7501115418AB0 }}
           subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_299A04F67E8344BFA1FF051F00660B76 }}
 
-      - name: 'Run Azure Functions Action'
-        uses: Azure/functions-action@v1
-        id: fa
+      - name: 'Deploy to Azure Function App'
+        uses: azure/webapps-deploy@v2
         with:
           app-name: 'busactivityapi'
           slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
 
           
+
 
