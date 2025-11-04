@@ -46,7 +46,7 @@ jobs:
       - name: 'Deploy to Azure Function App'
         uses: azure/webapps-deploy@v2
         with:
-          app-name: 'busactivityapi'
+          app-name: 'busactivityapi-cxedbmgyhdfbbken'
           # slot-name: 'Production'
           package: '${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}/output'
 
