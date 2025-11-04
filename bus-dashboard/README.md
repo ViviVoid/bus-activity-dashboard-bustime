@@ -47,6 +47,14 @@ npm install
 ```bash
 npm start
 ```
+or
+```bash
+ng serve
+```
+to test different configurations:
+```bash
+ng serve --configuration production
+```
 
 Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
