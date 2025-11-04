@@ -1,4 +1,4 @@
-# Bustime Activity Dashboard
+# BusTime Activity Dashboard
 -------------------------
 Contains:
  - BusTimeDashboard.API (ASP.NET 8 minimal API proxy)

@@ -4,7 +4,7 @@
 
 ## Setup
 
-1. Update `appsettings.json` with your BusTime BaseUrl and ApiKey.
+1. Copy `.env.example` to `.env` with appropriate base url and api keys.
 2. Run:
    ```
    dotnet restore
